@@ -7,7 +7,7 @@ import Database from '../../Componentes/Database';
 export default function AppItem(props) {
 
     const [checked, setChecked] = useState(false);
-
+    
     async function editar() {
         const item = await Database.getItem(props.id);
         props.navigation.navigate("Cadastro", item);
@@ -26,6 +26,7 @@ export default function AppItem(props) {
             }
         }
         ], { cancelable: false });
+
     }
     return (
         <View style={estilos.container}>
@@ -44,7 +45,9 @@ export default function AppItem(props) {
                     checked={checked}
                     onPress={() => setChecked(!checked)}
                 />
+                
             </View>
+                   
         </View>
     );
 }

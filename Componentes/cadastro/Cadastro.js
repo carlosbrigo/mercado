@@ -42,16 +42,16 @@ export default function Cadastro({ route, navigation }) {
                         placeholder="Informe o valor" keyboardType={'numeric'}
                         value={valor.toString()}  />
                     <TextInput style={estilos.input}
-                        onChangeText={(text) => setQtd(text)}
+                        onChangeText={(text2) => setQtd(text2)}
                         placeholder="Informe a Quantidade" keyboardType={'numeric'} 
-                        value={valor.toString()}/>
+                        value={qtd.toString()}/>
                     <TouchableOpacity style={estilos.button} onPress={Salvar}>
 
                         <View style={estilos.buttonContainer}>
                             <Feather name="save" size={22} color="white" />
                             <Text style={estilos.buttonText}>Salvar</Text>
                         </View>
-                        
+
                     </TouchableOpacity>
                     <TouchableOpacity style={estilos.button} onPress={Limpar}>
                         <View style={estilos.buttonContainer}>

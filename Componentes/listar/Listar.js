@@ -6,10 +6,22 @@ import Database from '../../Componentes/Database';
 
 
 export default function Lista({ route, navigation }) {
+
+    const [valorTotal, setValorTotal] = useState(0);
     const [items, setItems] = useState([]);
+
+    const calcularValorTotal = (items) => {
+        let total = 0;
+        items.forEach(item => {
+          total += item.valor;
+        });
+        setValorTotal(total);
+      }
+      
     useEffect(() => {
         Database.getItems().then(items => setItems(items));
     }, [route]);
+
     return (
         <View style={estilos.container}>
             <StatusBar style="light" />
@@ -22,7 +34,10 @@ export default function Lista({ route, navigation }) {
                         item.valor + ' - ' + item.qtd  } navigation={navigation}  />
                 })}
                 
+                <Text style={estilos.valorTotal}>Valor Total a compar: R${valorTotal.toFixed(2)}</Text>
+           
             </ScrollView>
+               
         </View>
     );
 }
