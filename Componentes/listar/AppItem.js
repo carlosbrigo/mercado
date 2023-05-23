@@ -1,18 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { CheckBox } from 'react-native-elements';
 import { Text, View, TouchableOpacity, Alert, StyleSheet } from 'react-native';
 import { Feather as Icon } from '@expo/vector-icons';
 import Database from '../../Componentes/Database';
 
-constructor(props) {
-    super(props);
-    this.state = {
-      checked: false
-    };
-  }
-
 export default function AppItem(props) {
 
+    const [checked, setChecked] = useState(false);
 
     async function editar() {
         const item = await Database.getItem(props.id);
@@ -46,9 +40,9 @@ export default function AppItem(props) {
                     <Icon name="edit" color="white" size={18} />
                 </TouchableOpacity>
                 <CheckBox
-                    title='Check me!'
-                    checked={this.state.checked}
-                    onPress={() => this.setState({ checked: !this.state.checked })}
+                    title='Comprado!'
+                    checked={checked}
+                    onPress={() => setChecked(!checked)}
                 />
             </View>
         </View>

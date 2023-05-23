@@ -1,7 +1,7 @@
 import React from 'react';
 import { Image, Text, View, Pressable } from 'react-native';
 import { AntDesign, Feather } from '@expo/vector-icons';
-import icone from '../../assets/icon.png';
+import icone from '../../assets/mercado.png';
 
 export default function Inicial(props) {
     return (

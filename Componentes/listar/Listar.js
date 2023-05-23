@@ -1,9 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
-import { estilosheet, View, Text, ScrollView } from 'react-native';
+import { View, Text, ScrollView } from 'react-native';
 import ItemLista from './AppItem';
 import Database from '../../Componentes/Database';
-//import estilos from './estilos';
+
 
 export default function Lista({ route, navigation }) {
     const [items, setItems] = useState([]);
